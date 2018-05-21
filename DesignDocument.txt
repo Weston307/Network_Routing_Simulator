@@ -1,0 +1,13 @@
+For this project I chose to use three structs to implement my simulator. 
+1) Topology
+    - This struct held the info that was brought in from the input file.
+2) Node
+    - Initially, this struct was designed to hold the nodes that were in the network. It held the nodes name, an array of the nodes neighbors, and an array of DV structs. In the end it held the network after total convergence.
+3) DV
+    - This struct held elements destination, cost, and next hop. This struct was used to help form the Node struct.
+
+Basically I had an array of Node’s and each Node of the array had an array of its neighbors and an array of DV’s.
+Once all of the elements in the array of Node’s were finalized I then started with the first element and sent a DV packet to its neighbors. 
+Each element in the array of Node’s did this to form the network.
+I then used this network to discover the number of rounds each network took to converge, the ID of the last Node to converge, 
+and the total number of DV messages that were sent.
